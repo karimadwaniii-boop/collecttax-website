@@ -2,35 +2,54 @@ import fs from 'fs'
 import path from 'path'
 import { initialLeads, initialClients, type Lead, type ClientAccount } from '@/lib/admin-data'
 
-const dataDir = path.join(process.cwd(), 'data')
+// In serverless environments (Vercel), local filesystem is read-only except /tmp
+const isVercel = Boolean(process.env.VERCEL)
+const dataDir = isVercel ? '/tmp' : path.join(process.cwd(), 'data')
 const leadsFilePath = path.join(dataDir, 'leads.json')
 const clientsFilePath = path.join(dataDir, 'clients.json')
 
+let memoryLeads: Lead[] = [...initialLeads]
+let memoryClients: ClientAccount[] = [...initialClients]
+
 function ensureDataDirectory() {
-  if (!fs.existsSync(dataDir)) {
-    fs.mkdirSync(dataDir, { recursive: true })
+  try {
+    if (!fs.existsSync(dataDir)) {
+      fs.mkdirSync(dataDir, { recursive: true })
+    }
+  } catch (e) {
+    console.warn('Could not ensure data directory, falling back to memory store:', e)
   }
 }
 
 // ---------------- LEADS STORE ----------------
 export function getLeads(): Lead[] {
-  ensureDataDirectory()
-  if (!fs.existsSync(leadsFilePath)) {
-    fs.writeFileSync(leadsFilePath, JSON.stringify(initialLeads, null, 2), 'utf-8')
-    return initialLeads
-  }
   try {
+    ensureDataDirectory()
+    if (!fs.existsSync(leadsFilePath)) {
+      try {
+        fs.writeFileSync(leadsFilePath, JSON.stringify(memoryLeads, null, 2), 'utf-8')
+      } catch (err) {
+        // Readonly filesystem fallback
+        return memoryLeads
+      }
+      return memoryLeads
+    }
     const raw = fs.readFileSync(leadsFilePath, 'utf-8')
     return JSON.parse(raw)
   } catch (error) {
-    console.error('Error reading leads.json:', error)
-    return initialLeads
+    console.error('Error reading leads.json, returning memoryLeads:', error)
+    return memoryLeads
   }
 }
 
 export function saveLeads(leads: Lead[]) {
-  ensureDataDirectory()
-  fs.writeFileSync(leadsFilePath, JSON.stringify(leads, null, 2), 'utf-8')
+  memoryLeads = leads
+  try {
+    ensureDataDirectory()
+    fs.writeFileSync(leadsFilePath, JSON.stringify(leads, null, 2), 'utf-8')
+  } catch (error) {
+    console.warn('Could not persist to disk, saved in memory:', error)
+  }
 }
 
 export function addLead(newLeadData: Omit<Lead, 'id' | 'createdAt' | 'status'> & { status?: Lead['status'] }): Lead {

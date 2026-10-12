@@ -37,21 +37,28 @@ export async function POST(req: Request) {
       status: 'New',
     })
 
-    // Automatically send confirmation email to the user (and alert admin)
-    await sendConfirmationEmail({
-      to: body.email,
-      name: body.name,
-      type: body.type || 'General enquiry',
-      annualSales: body.annualSales || body.salesVolume || 'Not Specified',
-      message: body.message || '',
-      tradeInInterest: Boolean(body.tradeInInterest),
-    })
+    let emailSent = false
+    try {
+      // Automatically send confirmation email to the user (and alert admin)
+      const emailResult = await sendConfirmationEmail({
+        to: body.email,
+        name: body.name,
+        type: body.type || 'General enquiry',
+        annualSales: body.annualSales || body.salesVolume || 'Not Specified',
+        message: body.message || '',
+        tradeInInterest: Boolean(body.tradeInInterest),
+      })
+      emailSent = Boolean(emailResult?.success)
+    } catch (mailErr) {
+      console.error('Email sending failed, but lead was recorded:', mailErr)
+    }
 
     return NextResponse.json(
       {
         success: true,
-        message: 'Enquiry submitted successfully! A confirmation email has been sent to your inbox.',
+        message: 'Enquiry submitted successfully! Our team will get back to you within 24 hours.',
         lead: createdLead,
+        emailSent,
       },
       { status: 201 }
     )
