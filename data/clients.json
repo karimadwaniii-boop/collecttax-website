@@ -1,0 +1,64 @@
+[
+  {
+    "id": "CLT-001",
+    "traderName": "Apex Slabs UK Ltd",
+    "businessType": "Limited Company",
+    "primaryPlatforms": [
+      "eBay",
+      "London Card Show",
+      "Whatnot"
+    ],
+    "currentYearTurnover": 142000,
+    "vatStatus": "Margin Scheme",
+    "nextHmrDeadline": "31 Jan 2027 (CT600 & Accounts)",
+    "packageEnrolled": "Limited Company (£1,800/yr)",
+    "paymentMethod": "Cash / Transfer",
+    "status": "Active"
+  },
+  {
+    "id": "CLT-002",
+    "traderName": "Kanto Vault Collectibles",
+    "businessType": "Sole Trader",
+    "primaryPlatforms": [
+      "Vinted",
+      "eBay",
+      "Card Shows"
+    ],
+    "currentYearTurnover": 48500,
+    "vatStatus": "Exempt",
+    "nextHmrDeadline": "31 Jan 2027 (Self Assessment)",
+    "packageEnrolled": "Pro Trader (£950/yr)",
+    "paymentMethod": "TCG Slabs / Trade-In",
+    "status": "Active"
+  },
+  {
+    "id": "CLT-003",
+    "traderName": "Rare Candy Breakers",
+    "businessType": "Limited Company",
+    "primaryPlatforms": [
+      "Whatnot",
+      "Instagram Live"
+    ],
+    "currentYearTurnover": 215000,
+    "vatStatus": "Standard Rate",
+    "nextHmrDeadline": "07 Nov 2026 (Quarterly VAT)",
+    "packageEnrolled": "Limited Company (£1,800/yr)",
+    "paymentMethod": "Cash / Transfer",
+    "status": "Active"
+  },
+  {
+    "id": "CLT-004",
+    "traderName": "Northwest TCG Trader",
+    "businessType": "Sole Trader",
+    "primaryPlatforms": [
+      "eBay UK",
+      "Birmingham Expo"
+    ],
+    "currentYearTurnover": 28000,
+    "vatStatus": "Exempt",
+    "nextHmrDeadline": "31 Jan 2027 (Self Assessment)",
+    "packageEnrolled": "Starter Collector (£500/yr)",
+    "paymentMethod": "Cash / Transfer",
+    "status": "Pending Review"
+  }
+]

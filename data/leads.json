@@ -1,0 +1,91 @@
+[
+  {
+    "id": "LEAD-2542",
+    "name": "Leon Champion",
+    "email": "leon@charizardbreaks.co.uk",
+    "phone": "07999888777",
+    "type": "Self Assessment Tax Return (Full-time trader / sole trader)",
+    "annualSales": "�50,000 - �90,000",
+    "tradeInInterest": true,
+    "message": "Need immediate assistance with eBay and Whatnot trading accounts.",
+    "status": "New",
+    "createdAt": "2026-10-12 18:45",
+    "notes": "Customer opted into TCG Slabs Trade-in."
+  },
+  {
+    "id": "LEAD-9136",
+    "name": "Brock Pewter",
+    "email": "brock@gymleader.co.uk",
+    "phone": "07123456789",
+    "type": "Full-time trader / sole trader",
+    "annualSales": "�50,000 - �90,000",
+    "tradeInInterest": true,
+    "message": "Selling vintage fossil & jungle booster packs. Need immediate consultation.",
+    "status": "New",
+    "createdAt": "2026-10-12 18:34",
+    "notes": "Customer opted into TCG Slabs Trade-in."
+  },
+  {
+    "id": "LEAD-9321",
+    "name": "Ash Ketchum",
+    "email": "ash@pallettown.com",
+    "phone": "07111222333",
+    "type": "Collector selling occasionally",
+    "annualSales": "�10,000 - �50,000",
+    "tradeInInterest": true,
+    "message": "Need accounting for Charizard base set sale.",
+    "status": "New",
+    "createdAt": "2026-10-12 18:26",
+    "notes": "Customer opted into TCG Slabs Trade-in."
+  },
+  {
+    "id": "LEAD-101",
+    "name": "Marcus Vance",
+    "email": "marcus.tcg@gmail.com",
+    "phone": "07892 441029",
+    "type": "Full-time trader / sole trader",
+    "annualSales": "£50,000 - £90,000 (Approaching VAT threshold)",
+    "tradeInInterest": true,
+    "message": "Selling high-end vintage Pokémon slabs on eBay UK & Whatnot. Exceeded £60k this year, need VAT Margin Scheme setup.",
+    "status": "New",
+    "createdAt": "2026-10-12 18:45",
+    "notes": "Interested in settling via 3x PSA 10 slabs trade-in."
+  },
+  {
+    "id": "LEAD-102",
+    "name": "Sarah Jenkins",
+    "email": "s.jenkins@onepiecetrade.co.uk",
+    "phone": "07700 900124",
+    "type": "Received an HMRC nudge letter",
+    "annualSales": "£10,000 - £50,000 (Active trader)",
+    "tradeInInterest": false,
+    "message": "Received an HMRC One-to-Many letter for eBay card sales over 2024-2025. Very stressed, need urgent compliance response.",
+    "status": "In Review",
+    "createdAt": "2026-10-11 14:20",
+    "notes": "Requested urgent callback for 30-day HMRC deadline."
+  },
+  {
+    "id": "LEAD-103",
+    "name": "Liam Gallagher",
+    "email": "cardsandbreaks@outlook.com",
+    "phone": "07981 123456",
+    "type": "Limited company / Card shop",
+    "annualSales": "£90,000+ (High volume / VAT registered)",
+    "tradeInInterest": true,
+    "message": "Running a booster box break channel on Whatnot. Need full year-end statutory accounts and CT600 return.",
+    "status": "Contacted",
+    "createdAt": "2026-10-10 09:15"
+  },
+  {
+    "id": "LEAD-104",
+    "name": "Oliver Wright",
+    "email": "oliver.pokemon@hotmail.co.uk",
+    "phone": "07412 889900",
+    "type": "Side hustle seller (eBay/Vinted/Whatnot)",
+    "annualSales": "£1,000 - £10,000 (Self Assessment range)",
+    "tradeInInterest": false,
+    "message": "Downsizing personal childhood collection on Vinted. Sold about £4,000. Not sure if I need to pay income tax.",
+    "status": "Closed",
+    "createdAt": "2026-10-08 11:30"
+  }
+]
